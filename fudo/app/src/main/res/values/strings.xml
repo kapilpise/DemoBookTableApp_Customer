@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">Book My Table</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="logoContentDescription">Splash Logo</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <!-- Network String Starts here -->
+    <string name="network_service_message_title">Network Services</string>
+    <string name="network_service_message">Network not available</string>
+
+    <!-- ShowAlertDialog String Starts here -->
+    <string name="Ok">OK</string>
+
+
+    <!-- Application Error Message -->
+    <string name="invalid_message">Oops! something went wrong. Please try again</string>
+    <string name="no_data_received">Could not get any data from the web server</string>
+    <string name="invalid_json_format">Invalid JSON format</string>
+    <string name="unauthorized_access">Unauthorized Access</string>
+
+
+    <!-- Google Map Settings -->
+    <string name="title_activity_maps">Map</string>
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">12345678999</string>
+    <string name="location_service_message_title">Location Services</string>
+    <string name="location_service_message">Kindly enable location services</string>
+
+
+    <!-- GooglePlayService Strings -->
+    <string name="device_not_supported">This device is not supported</string>
+    <string name="invalid_google_play_service_found">No valid Google Play Services APK found</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_activity_hotel_list">HotelListActivity</string>
+
+    <string name="add">ADD</string>
+    <string name="search">Search Here</string>
+    <string name="veg">Veg</string>
+    <string name="non_veg">Non Veg</string>
+    <string name="emailID">Email ID</string>
+    <string name="orderID">Order ID</string>
+
+
+</resources>
