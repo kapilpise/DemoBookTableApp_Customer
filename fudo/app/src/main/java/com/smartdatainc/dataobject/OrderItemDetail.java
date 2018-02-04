@@ -43,7 +43,7 @@ public class OrderItemDetail  implements Serializable {
     @SerializedName("DishAmount")
     @Expose
     private Integer dishAmount;
-    @SerializedName("ImagePath")
+    @SerializedName("imagePath")
     @Expose
     private String imagePath;
 

@@ -24,6 +24,7 @@ public class Constants {
 
         public static String WS_IP_ADDRESS = "";
         public static String WS_BASE_URL = "http://108.168.203.227/bookmytable/api/Hotel/";
+        public static String WS_IMAGE_BASE_URL = "http://108.168.203.227:9100/Content/";
 
         public static final String WS_GET_HOTEL_LIST = "GetRestaurantDetailsList";
 

@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.smartdatainc.activities.ModifyOrderActivity;
 import com.smartdatainc.dataobject.OrderItemDetail;
 import com.smartdatainc.fudo.R;
+import com.smartdatainc.utils.Constants;
 import com.smartdatainc.utils.Utility;
 
 import java.util.ArrayList;
@@ -52,7 +53,8 @@ public class ModifyOrderAdapter extends RecyclerView.Adapter<ModifyOrderAdapter.
         holder.dishPrice.setText("$ " + dishModel.getDishUnitPrice());
 
         if (dishModel.getImagePath() != null && !dishModel.getImagePath().isEmpty()) {
-            Utility.loadImageFromUrl(context, holder.mImageView, android.R.color.darker_gray, dishModel.getImagePath());
+            String url= Constants.WebServices.WS_IMAGE_BASE_URL+dishModel.getImagePath().split("/Content/")[1];
+            Utility.loadImageFromUrl(context, holder.mImageView, android.R.color.darker_gray, url);
         } else {
             Utility.loadImageDrawable(context, holder.mImageView, R.drawable.restaurant_first);
         }
