@@ -94,6 +94,11 @@ public class ModifyOrderActivity extends BaseActivity implements ServiceRedirect
 //        hotelModal = getIntent().getParcelableExtra("hotel");
 //        hotelTableModal = getIntent().getParcelableExtra("table");
             orderManager = new OrderManager(this, this);
+
+
+            if (data.getIsApproveStatus() == 1) {
+                btnConfirmOrder.setText("Order Accepted");
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -262,7 +267,10 @@ public class ModifyOrderActivity extends BaseActivity implements ServiceRedirect
         AlertDialog.Builder alert = new AlertDialog.Builder(
                 this);
         alert.setTitle("Cancel Order");
-        alert.setMessage("Are you sure to cancel this order");
+        if (data.getIsApproveStatus() == 1) {
+            alert.setMessage("Your order is accepted, are you sure to cancel this order?");
+        } else
+            alert.setMessage("Are you sure to cancel this order");
         alert.setPositiveButton("YES", new DialogInterface.OnClickListener() {
 
             @Override

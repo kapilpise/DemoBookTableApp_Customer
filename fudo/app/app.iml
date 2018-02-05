@@ -100,6 +100,7 @@
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/shaders" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/splits-support" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/symbols" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/tmp" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/transforms" />
       <excludeFolder url="file://$MODULE_DIR$/build/outputs" />
       <excludeFolder url="file://$MODULE_DIR$/build/tmp" />
@@ -145,7 +146,6 @@
     <orderEntry type="library" name="com.google.firebase:firebase-analytics-impl-11.8.0" level="project" />
     <orderEntry type="library" name="com.android.support:support-v4-27.0.2" level="project" />
     <orderEntry type="library" name="com.android.support:appcompat-v7-27.0.2" level="project" />
-    <orderEntry type="library" name="__local_aars__:/home/kapilpise/kapil/projects/Roshan/fudo/app/libs/sdei-support-lib.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="com.google.firebase:firebase-storage-11.8.0" level="project" />
     <orderEntry type="library" name="com.android.support:support-annotations:27.0.2@jar" level="project" />
     <orderEntry type="library" name="com.google.android.gms:play-services-tagmanager-api-license-11.8.0" level="project" />
@@ -218,6 +218,7 @@
     <orderEntry type="library" name="com.crashlytics.sdk.android:beta-1.1.4" level="project" />
     <orderEntry type="library" name="com.google.firebase:firebase-config-license-11.8.0" level="project" />
     <orderEntry type="library" name="com.google.android.gms:play-services-gass-license-11.8.0" level="project" />
+    <orderEntry type="library" name="__local_aars__:/home/kapilpise/kapil/projects/GitHUb_Upload/DemoBookTableApp_Customer/fudo/app/libs/sdei-support-lib.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="com.android.support:recyclerview-v7-27.0.2" level="project" />
     <orderEntry type="library" name="com.google.android.gms:play-services-awareness-license-11.8.0" level="project" />
     <orderEntry type="library" name="com.google.android.gms:play-services-nearby-11.8.0" level="project" />
