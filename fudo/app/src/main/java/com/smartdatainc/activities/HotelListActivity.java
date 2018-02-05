@@ -2,7 +2,6 @@ package com.smartdatainc.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -15,17 +14,17 @@ import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.smartdatainc.adapters.HotelListAdapter;
 import com.smartdatainc.dataobject.AppInstance;
 import com.smartdatainc.dataobject.HotelModal;
-
 import com.smartdatainc.fudo.R;
 import com.smartdatainc.interfaces.ServiceRedirection;
 import com.smartdatainc.managers.HotelListManager;
 import com.smartdatainc.utils.Constants;
+import com.smartdatainc.utils.Utility;
 
 import java.util.ArrayList;
 
@@ -37,10 +36,13 @@ public class HotelListActivity extends BaseActivity implements ServiceRedirectio
     private HotelListAdapter hotelListAdapter;
     private EditText etSearch;
 
+    Utility utility;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        utility = new Utility(this);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -129,7 +131,7 @@ public class HotelListActivity extends BaseActivity implements ServiceRedirectio
     }
 
     private void loadHotelList() {
-
+        utility.startLoader(this, R.drawable.image_for_rotation);
         HotelListManager hotelListManager = new HotelListManager(HotelListActivity.this, HotelListActivity.this);
         hotelListManager.getHotelList();
     }
@@ -137,13 +139,11 @@ public class HotelListActivity extends BaseActivity implements ServiceRedirectio
 
     @Override
     public void onSuccessRedirection(int taskID) {
+        utility.stopLoader();
         if (taskID == Constants.TaskID.GET_HOTEL_LIST_TASK_ID) {
                 //AppInstance.hotelModal = (HotelModal) dataReceived;
                 hotelModels.addAll(AppInstance.hotelModal);
                 hotelListAdapter.notifyDataSetChanged();
-
-
-
         }
     }
 
@@ -161,7 +161,8 @@ public class HotelListActivity extends BaseActivity implements ServiceRedirectio
 
     @Override
     public void onFailureRedirection(String errorMessage) {
-
+        utility.stopLoader();
+        Toast.makeText(this, errorMessage, Toast.LENGTH_LONG).show();
     }
 
     @Override

@@ -149,6 +149,12 @@ public class DishListActivity extends BaseActivity implements ServiceRedirection
 
     @Override
     public void onSuccessRedirection(int taskID) {
+        try {
+            utility.hideVirtualKeyboard(this);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        utility.stopLoader();
         if (taskID == Constants.TaskID.GET_HOTEL_MENU_LIST_TASK_ID) {
             //AppInstance.hotelModal = (HotelModal) dataReceived;
             dishModels.addAll(AppInstance.hotelMenuModal);
@@ -176,7 +182,7 @@ public class DishListActivity extends BaseActivity implements ServiceRedirection
 
     @Override
     public void onFailureRedirection(String errorMessage) {
-
+        utility.stopLoader();
         Toast.makeText(this, "Failue Error : " + errorMessage, Toast.LENGTH_SHORT).show();
 
     }
@@ -247,7 +253,7 @@ public class DishListActivity extends BaseActivity implements ServiceRedirection
                         orderDetailsEntities.setHotelMenuModal(dishListAdapter.getOrderdMenuList());
                         orderDetailsEntities.setTotalAmount(getTotalPrice(orderDetailsEntities.getHotelMenuModal()));
 
-
+                        utility.startLoader(DishListActivity.this, R.drawable.image_for_rotation);
                         orderManager.ConfirmOrder(orderDetailsEntities);
                         /*if(!TextUtils.isEmpty(email)){
                             textInputLayout.setError("Email ID Requied");

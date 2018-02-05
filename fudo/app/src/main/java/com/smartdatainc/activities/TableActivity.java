@@ -17,6 +17,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.smartdatainc.adapters.TableListAdapter;
 import com.smartdatainc.dataobject.AppInstance;
@@ -162,12 +163,13 @@ public class TableActivity extends BaseActivity implements ServiceRedirection {
     }
 
     private void setData() {
-
+        utilObj.startLoader(this, R.drawable.image_for_rotation);
         hotelTableManager.getHotelTableList(hotelModal.getId());
     }
 
     @Override
     public void onSuccessRedirection(int taskID) {
+        utilObj.stopLoader();
         hotelTableModalList = AppInstance.hotelTableListModal;
         if (hotelTableModalList != null) {
             mAdapter = new TableListAdapter(mContext, hotelTableModalList, hotelModal);
@@ -178,7 +180,8 @@ public class TableActivity extends BaseActivity implements ServiceRedirection {
 
     @Override
     public void onFailureRedirection(String errorMessage) {
-
+        utilObj.stopLoader();
+        Toast.makeText(this, errorMessage, Toast.LENGTH_LONG).show();
     }
 
     public interface ClickListener {
