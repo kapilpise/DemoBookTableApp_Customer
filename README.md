@@ -1,2 +1,3 @@
 # DemoBookTableApp_Customer
-Demo app for booking table and order menu for restaurant
+-Demo app for customer who can do booking of table for restaurant and can order menu in same booking
+-Can check/search order by orderId and by email
